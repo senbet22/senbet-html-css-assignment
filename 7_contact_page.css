@@ -1,0 +1,490 @@
+/* Navigation bar */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #FDF8F2;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    padding: 0 50px;
+    width: 100%;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-one{
+    background-color: #4E9FB3;
+    color: #000000;
+    height: 100px;
+    cursor: pointer;
+}
+.gradient{
+    width: 500px;
+    height: 500px;
+    border: 1px ;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -51.5%);  
+    background-image: radial-gradient(#FF9252, #ff925263);
+}
+.navbar-icons > div + div{
+    margin-left: 20px;
+    font-size: 20px;
+}
+.magnifying-glass{
+    font-size: 20px;
+}
+nav img{
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+
+/* second Nav-bar (orange) */
+
+.navbar-second{
+    background-color: #FF9252;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+.nav-links ul li{
+    font-family: 'Gelasio', serif;
+    list-style: none;
+    display: inline-block;
+    padding: 8px 28px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #000000d1;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+.nav-links ul li a:hover{
+    color: #000000;
+}
+
+
+/* ---Interactive navbar hover---*/
+.nav-links .flex li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #000000c8;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+.nav-links .flex li:hover::after {
+    width: 100%;
+}
+
+/* Hides mobile icons in desktop version  */
+#mobile{
+    display: none;
+    align-items: center;
+}
+
+/* Hides checkbox on desktop version */
+#hamburger{
+    display:none;
+  }
+
+/* Hamburger menu */
+.ham-container{
+height:30px;
+width:40px;
+display:flex;
+margin:10% auto;
+display:none;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+}
+
+.line{
+position:absolute;
+height:5px;
+width:30px;
+background-color:black;
+transition: .4s ease;
+}
+
+.line::before{
+content:'';
+position:absolute;
+height:5px;
+width:30px;
+background-color:black;
+top:-8px;
+transition: .4s ease;
+}
+.line::after{
+content:'';
+position:absolute;
+height:5px;
+width:30px;
+background-color:black;
+top:8px;
+}
+
+#hamburger:checked + label #active{
+transform:rotate(45deg);
+}
+
+#hamburger:checked + label #active::before{
+transform:rotate(-90deg) translateX(-8px);
+}
+
+#hamburger:checked + label #active::after{
+display:none; 
+}
+.nav-links input:checked ~ .flex {
+left: 0;
+}
+
+
+/* Body Contact-Us */
+
+.contact-body{
+    font-family: 'Montserrat', sans-serif;
+}
+.contact-us{
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden;
+    margin: 20px 0px;
+}
+.contact-us img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: contrast(120%) brightness(200%);
+}
+.contact-us .overlay{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1434c483; 
+    z-index: 1; 
+}
+.contact-us h1{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0E0F0F;
+    background-color: transparent;
+    font-size: 60px;
+    text-align: center;
+    z-index: 2; 
+    
+}
+
+
+/* Opening Hours */
+
+.opening-hours{
+    font-size: 20px;
+}
+.opening-hours h2{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.opening-hours p{
+    text-align: left;
+    line-height: 2;
+    margin: 30px 100px;
+}
+
+
+/* location/Maps */
+
+.visit-location{
+    display: grid;
+    place-items: center;
+}
+.visit-location h2{
+    text-align: center;
+    font-size: 28px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    
+}
+.visit-location iframe{
+    height: 500px;
+    width: 800px;
+}
+
+/* Join community section */
+
+
+.community{
+    display: grid;
+    place-items: center;
+
+
+}
+.community img{
+    height: 600px;
+    max-width: 100%;
+    align-items: center;
+    margin: 60px 0px;
+    border-radius: 15px;
+}
+.community h1{
+    font-family: 'Galada', cursive;
+    position: absolute;
+    color: #ec6f6f96;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 380px;
+    text-shadow: 2px 2px 4px #000000;
+
+
+
+}
+.community p{
+    position: absolute;
+    margin-bottom: 190px;
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: 18px;
+    align-items: center;
+    color: #ec6f6f96;
+    text-shadow: 2px 2px 4px #000000;
+
+}
+.community .btn{
+    position: absolute;
+    align-items: center;
+    margin-top: 20%;
+    background-color: #EC6F70;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px #ec6f6f96;
+    border: #0d211166 solid 4px;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: #EC6F70;
+    color: #000000;
+    transition: all 0.4s;
+}
+
+
+/* Form */
+
+.send-mail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 90%;
+    max-width: 800px;
+}
+.input-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #9998966c;
+    color: #000000;
+    background: transparent;
+    font-size: 16px;
+}
+label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #999896;
+    cursor: text;
+    transition: 0.2s;
+}
+button{
+    padding: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    background: #4E9FB3;
+    border: 1px solid #999896;
+    width: 100%;
+    cursor: pointer;
+}
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label{
+    top: -33px;
+    font-size: 14px;
+}
+/* Contact section (bottom) */
+
+.contact{
+    margin-top: 120px;
+    background-color: #999896;
+}
+.contact-info{
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    gap: 3rem;
+    padding: 40px;  
+}
+.contact-info h3 {
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.contact-info p {
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .42s;
+}
+.contact-info p:hover{
+    color: #4E9FB3;
+}
+.social-icons i{
+    color: #000000;
+    margin-left: 5px;
+    font-size: 28px;
+    transition: all .42s;
+}
+.social-icons i:hover{
+    transform: scale(1.3);
+}
+.first-info img{
+    width: 140px;
+    height: auto;
+}
+.fifth-info img{
+    width: 200px;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+/* ----- Media querry ------ */
+
+@media (max-width:799px) {
+
+    /* Navbar */
+    .gradient{
+        width: 350px;
+    }
+    nav img{
+        width: 100px;
+    }
+    #navbar-one .navbar-icons{
+        display: none;
+    }
+
+    .nav-links .flex {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: absolute;
+        top: 160;
+        left: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #FF9252;
+        box-shadow: 0 40px 60px #0000001a;
+        padding: 80px 0 0 10px;
+    }
+    #navbar li{
+        margin-bottom: 20px;
+    }
+    #mobile{
+        display: flex;
+        align-items: center;
+    }
+    #mobile i{
+        color: #000000;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+    /* --- hamburger  */
+    .ham-container{
+        display: flex;
+    }
+
+    /* body */
+
+    .contact-us h1{
+        font-size: 40px;
+    }
+
+    .visit-location iframe{
+        height: 350px;
+        max-width: 100%;
+        padding: 0px 10px;
+    }
+    .community img{
+        height: 500px;
+        width: 100%;
+        padding: 0px 10px;
+
+    }
+    .community h1{
+        font-size: 35px
+    }
+    .community p{
+        font-size: 16px;
+    }
+    .community .btn{
+        padding: 10px 30px;
+        font-size: 22px;
+    }
+
+    .visit-location h2{
+        font-size: 18px;
+    }
+    
+
+
+
+}
+
